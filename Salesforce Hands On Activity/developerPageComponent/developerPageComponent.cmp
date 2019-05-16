@@ -1,0 +1,436 @@
+<aura:component implements="force:appHostable,flexipage:availableForRecordHome,flexiPage:availableForAllPageTypes,force:lightningQuickAction">
+	
+    <!--AURA EVENTS START-->
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}"/>
+    
+    <!--AURA ATTRIBUTES START-->
+    <aura:attribute name="showDXImages" type="Boolean" access="Public" default="true"/>
+    <aura:attribute name="showVideoGalleryImages" type="Boolean" access="Public" default="false"/>
+    <aura:attribute name="showMeetDeveloperImages" type="Boolean" access="Public" default="false"/>
+    <aura:attribute name="showTrailheadImages" type="Boolean" access="Public" default="false"/>
+    <aura:attribute name="showProductsPane" type="Boolean" access="Public" default="false"/>
+    
+    <body>
+        <div class="grid">
+        <div class="slds-grid">
+			<div class="slds-col slds-size_2-of-12" id="navigationLink">
+				<img src="/resource/developerHomePageImages/salesforceDevelopersLogo.png" class="devLogo"/>	
+			</div>
+			<div class="slds-col" id="navigationLink">
+				<a class="navigationLinkText" onclick="{!c.openProductsPane}">PRODUCTS</a>
+			</div>
+			<div class="slds-col" id="navigationLink">
+                <a class="navigationLinkText" href="#Resources">RESOURCES</a>
+			</div>
+			<div class="slds-col" id="navigationLink">
+                <a class="navigationLinkText" href="#Community">COMMUNITY</a>
+			</div>
+			<div class="slds-col" id="navigationLink">
+                <a class="navigationLinkText" href="#Blog">BLOG</a>
+			</div>
+			<div class="slds-col" id="navigationLink">
+                <a class="navigationLinkText" href="#trailhead">TRAILHEAD</a>
+			</div>
+			<div class="slds-col slds-size_3-of-12" id="navigationLink">
+				<span >
+                    <lightning:input type="search" name="search" class="searchBox"/>
+                </span>
+			</div>
+            <div class="slds-col slds-size_1-of-12">
+				<span>
+                    <button type="button" class="loginButton">Login ></button>
+                </span>
+			</div>
+            <div class="slds-col slds-size_1-of-12">
+				<span>
+                    <button type="button" class="signUpButton">Sign Up ></button>
+                </span>
+			</div>
+		</div>
+        </div>       
+        
+        <div class="relative"> 
+            <span class="middleNavigationIcons">
+                <a class="verticalLink" onclick="{!c.goToDXTab}">
+        			<div class="roundedBox opacity" aura:id="dx19">
+                		<p class="roundedBoxText">TrailheaDX'19</p>
+            		</div>
+                </a>
+				<div class="padding"></div>
+                <a class="verticalLink">
+        			<div class="roundedBox opacity">
+                		<p class="roundedBoxText">LWC Video Gallery</p>
+            		</div>
+                </a>    
+            	<div class="padding"></div>
+                <a class="verticalLink" onclick="{!c.goToMeetDevsTab}">
+        			<div class="roundedBox opacity" aura:id="meetDevs">
+                		<p class="roundedBoxText">Meet Developers</p>
+            		</div> 
+                </a>    
+            	<div class="padding"></div>
+                <a class="verticalLink" onclick="{!c.goToTrailheadTab}">
+        			<div class="roundedBox opacity" aura:id="trailHead">
+                		<p class="roundedBoxText">Learn with Trailhead</p>
+            		</div>
+                </a>    
+        	</span>
+            <img class="lionIcon" src="/resource/developerHomePageImages/lionIcon.png"/>
+            <img class="lightningBoltIcon" src="/resource/developerHomePageImages/lightningBoltIcon.png"/>
+            <img class="compassIcon" src="/resource/developerHomePageImages/compassIcon.png"/>
+            <img class="signsInverseIcon" src="/resource/developerHomePageImages/signsInverseIcon.png"/>
+            
+            <!--Conditionally Render Background Images -->
+            <aura:if isTrue="{!v.showDXImages}">
+    			<img src="/resource/developerHomePageImages/woodBackground.png"/>
+				<img src="/resource/developerHomePageImages/trailheadDXLogo.png" class="trailheadLogo"/>
+            	<span class="trailheaDXText">
+        			<p>TrailheaDX '19</p>  
+            		<p>Join us in San Francisco for our annual Salesforce Developer Conference May 29 - 30</p>
+        		</span>
+			</aura:if>
+            
+            <aura:if isTrue="{!v.showMeetDeveloperImages}">
+    			<img src="/resource/developerHomePageImages/developerBackground.png"/>
+				<img src="/resource/developerHomePageImages/developerCharacters.png" class="developerCharacters"/>
+			</aura:if>
+            
+            <aura:if isTrue="{!v.showTrailheadImages}">
+    			<img src="/resource/developerHomePageImages/trailheadBackground.png"/>
+			</aura:if>
+            
+            <aura:if isTrue="{!v.showProductsPane}">
+    			
+				<div class="slds-grid slds-gutters productLinks">
+        			<div class="slds-col slds-size_1-of-2">                       
+            			<p>Overview</p>
+                        <p><a>Platform</a></p>
+                        <p><a>AppExchange</a></p>
+                        <p><a>Lightning Platform</a></p>
+                        <p><a>Mulesoft</a></p>
+                        <p><a>Heroku</a></p>
+                        <p><a>Mobile</a></p>
+            		</div>
+            		<div class="slds-col slds-size_1-of-2">                       
+            			<p>Salesforce Apps</p>
+                        <p><a>einstein Analytics</a></p>
+                        <p><a>Commerce Cloud</a></p>
+                        <p><a>Community Cloud</a></p>
+                        <p><a>Marketing Cloud</a></p>
+                        <p><a>Pardot</a></p>
+                        <p><a>Quip</a></p>
+            		</div>
+                    <div class="slds-col slds-size_6-of-12">  
+                    </div>
+        		</div>                
+                
+            </aura:if>
+            
+		</div>        
+        
+        <br></br>
+        
+        <div class="slds-grid slds-gutters" id="middleSection">
+			<div class="slds-col slds-size_1-of-2">
+				<p>Be a Trailblazer - Build apps of the future.</p>
+                <br></br>
+                <p>The Salesforce Platform is the best way to create and scale trusted apps that 
+                    customers want to use every day. Build powerful applications fast with Lightning 
+                    Components, smarter with Einstein, and together with Salesforce DX. 
+                    <a>Learn more about the Salesforce platform.</a>
+                </p>
+                <br></br>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <img src="/resource/developerHomePageImages/cloud.png"/>
+                    </div>
+                    <div class="slds-col">
+                        <p>
+                            <a>Lightning Platform</a>
+                        </p>
+                        <p>
+                            <a>Build apps 5x faster with our secure multitenant platform.</a>
+                        </p>
+                    </div>
+                    <div class="slds-col">
+                        <img src="/resource/developerHomePageImages/heroku.png"/>
+                    </div>
+                    <div class="slds-col">
+                        <p>
+                            <a>Heroku</a>
+                        </p>
+                        <p>
+                            <a>Build scalable apps with open languages and frameworks</a>
+                        </p>
+                    </div>
+                </div>
+                <br></br>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <img src="/resource/developerHomePageImages/einstein.png"/>
+                    </div>
+                    <div class="slds-col">
+                        <p>
+                            <a>Einstein</a>
+                        </p>
+                        <p>
+                            <a>Build smarter apps with the world's most intelligent CRM.</a>
+                        </p>
+                    </div>
+                    <div class="slds-col">
+                        <img src="{!$Resource.trailheadLogo}"/>
+                    </div>
+                    <div class="slds-col">
+                        <p>
+                            <a>Trailhead</a>
+                        </p>
+                        <p>
+                            <a>Blaze your trail and learn to build customer apps people love.</a>
+                        </p>
+                    </div>
+                </div>
+			</div>
+            
+			<div class="slds-col slds-size_1-of-2" id="blueBlackground">
+				<div class="slds-grid slds-gutters">
+                    <div class="slds-col">                       
+                        <p>Community</p>
+                    </div>
+                    <div class="slds-col">                       
+                        <p>Resources and Tools</p>
+                    </div>
+                </div>
+                <br></br>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-12">                       
+                        <img src="/resource/developerHomePageImages/calendarIcon.png"/>
+                    </div>
+                    <div class="slds-col slds-size_5-of-12">                       
+                        <p>
+                            <a>Upcoming Events</a>
+                        </p>
+                        <p>
+                            <a>Register for upcoming events and webinars.</a>
+                        </p>
+                    </div>
+                    <div class="slds-col slds-size_1-of-12">                       
+                        <img src="/resource/developerHomePageImages/signsIcon.png"/>
+                    </div>
+                    <div class="slds-col slds-size_5-of-12">                       
+                        <p>
+                            <a>Get Free Tutorials</a>
+                        </p>
+                        <p>
+                            <a>Trailhead is the fun and free way to learn Salesforce.</a>
+                        </p>
+                    </div>
+                </div>
+                <br></br>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-12">                       
+                        <img src="/resource/developerHomePageImages/questionMarkLogo.png"/>
+                    </div>
+                    <div class="slds-col slds-size_5-of-12">                        
+                        <p>
+                            <a>Ask Questions</a>
+                        </p>
+                        <p>
+                            <a>Get help when you need it from Salesforce and community experts</a>
+                        </p>
+                    </div>
+                    <div class="slds-col slds-size_1-of-12">                       
+                        <img src="/resource/developerHomePageImages/inverseCloudLogo.png"/>
+                    </div>
+                    <div class="slds-col slds-size_5-of-12">                        
+                        <p>
+                            <a>Salesforce for VS Code</a>
+                        </p>
+                        <p>
+                            <a>Develop and deploy Salesforce apps with a modern code editor.</a>
+                        </p>                       
+                    </div>
+                </div>
+                <br></br>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-12">                       
+                        <img src="/resource/developerHomePageImages/calendarIcon.png"/>
+                    </div>
+                    <div class="slds-col slds-size_5-of-12">                       
+                        <p>
+                            <a>Join Your Local Dev Group</a>
+                        </p>
+                        <p>
+                            <a>Meet other developers and get best practices for building on the Salesforce Platform</a>
+                        </p>
+                    </div>
+                    <div class="slds-col slds-size_1-of-12">                       
+                        <img src="/resource/developerHomePageImages/blogIcon.png"/>
+                    </div>
+                    <div class="slds-col slds-size_5-of-12">                       
+                        <p>
+                            <a>Latest Blog Posts</a>
+                        </p>
+                        <p>
+                            <a>Get the latest news and articles</a>
+                        </p>
+                    </div>
+                </div>               
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_6-of-12">                       
+                       
+                    </div>
+                    <div class="slds-col slds-size_1-of-12">                       
+                        <img src="/resource/developerHomePageImages/s1Logo.png"/>
+                    </div>
+                    <div class="slds-col slds-size_5-of-12">                       
+                        <p>
+                            <a>Getting Started</a>
+                        </p>
+                        <p>
+                            <a>Get free tools and learn how to build your first app</a>
+                        </p>
+                    </div>
+                </div>
+                <br></br>
+			</div>
+		</div>
+        
+        <br></br>
+        <br></br>
+        <div class="blueBar">
+            <p class="blueBarText">Join over 5.0 million Salesforce developers.</p>
+            <div class="blueBarButtonContainer">
+            	<button type="button" class="blueBarButton">Subscribe Now!</button>
+            </div>
+        </div>
+        
+        <!--Bottom Section -->
+        <div class="bottomSection">
+        	<br></br>
+        	<div class="slds-grid slds-gutters" id="middleSection">
+        		<div class="slds-col slds-size_1-of-5">                       
+            		<p>Get started</p> 
+               		<p class="firstLink">
+                    	<a>Salesforce Platform</a>
+                	</p>
+                	<p class="otherLink">
+                    	<a>Lightning Platform</a>
+                	</p>
+                	<p class="otherLink">
+                    	<a>Heroku</a>
+                	</p>
+                	<p class="otherLink">
+                    	<a>MuleSoft Quick Start Guide</a>
+                	</p>
+            	</div>
+            	<div class="slds-col slds-size_1-of-5">                       
+            		<p>Salesforce Dev Centers</p> 
+               		<p class="firstLink">
+                    	<a>Lightning Developer Center</a>
+                	</p>
+                	<p class="otherLink">
+                    	<a>Mobile Developer Center</a>
+                	</p>
+                	<p class="otherLink">
+                    	<a>Heroku Dev Center</a>
+                	</p>
+                	<p class="otherLink">
+                    	<a>Desk.com developers</a>
+                	</p> 
+                	<p class="otherLink">
+                    	<a>Pardot Developer Site</a>
+                	</p> 
+                	<p class="otherLink">
+                    	<a>MuleSoft Developer Site</a>
+                	</p> 
+            	</div>        
+            	<div class="slds-col slds-size_1-of-5">                       
+            		<p>Developer resources</p>
+                	<p class="firstLink">
+                    	<a>Mobile Services</a>
+                	</p>
+                	<p class="otherLink">
+                    	<a>Lightning Platform Docs</a>
+                	</p>
+                	<p class="otherLink">
+                    	<a>Lightning Platform Downloads</a>
+                	</p>
+                	<p class="otherLink">
+                    <a>Heroku Downloads</a>
+                	</p> 
+                	<p class="otherLink">
+                    	<a>Learn Salesforce with Trailhead</a>
+                	</p> 
+            	</div>
+            	<div class="slds-col slds-size_1-of-5">                       
+            		<p>Community</p>
+                	<p class="firstLink">
+                    	<a>Developer Community Groups</a>
+                	</p>
+                	<p class="otherLink">
+                    	<a>Developer Forums</a>
+                	</p>
+                	<p class="otherLink">
+                    	<a>Salesforce Developer Events</a>
+                	</p>
+                	<p class="otherLink">
+                    	<a>Webinars</a>
+                	</p> 
+            	</div>
+            	<div class="slds-col slds-size_1-of-5">                       
+            		<p>Learn more</p>   
+                	<p class="firstLink">
+                    	<a>Salesforce AppExchange</a>
+                	</p>
+                	<p class="otherLink">
+                    	<a>Salesforce Administrators</a>
+                	</p>
+                	<p class="otherLink">
+                    	<a>Salesforce.com Help Portal</a>
+                	</p>
+            	</div>
+        	</div>
+            <br></br>
+        	<br></br>
+            
+            <div class="slds-grid slds-gutters" id="legalSection">
+        		<div class="slds-col slds-size_2-of-3">                       
+            		<p>© Copyright 2000-2019 salesforce.com, inc. All rights reserved. 
+                Various trademarks held by their respective owners.
+				Salesforce.com, inc. The Landmark @ One Market, 
+                Suite 300, San Francisco, CA 94105, United States</p> 
+            	</div>
+            	<div class="slds-col slds-size_1-of-3">                       
+            		<img src="/resource/developerHomePageImages/socialMediaLogos.png" class="socialMediaLogos"/>		                		 
+            	</div>                   	
+        	</div>
+            <br></br>
+            <div class="slds-grid slds-gutters" id="legalSection">
+        		<div class="slds-col slds-size_1-of-10">                       
+            		<a>Privacy Statement</a> 
+            	</div>
+            	<div class="slds-col slds-size_1-of-10">                       
+            		<a>Security Statement</a> 
+            	</div> 
+                <div class="slds-col slds-size_1-of-10">                       
+            		<a>Terms of Use</a> 
+            	</div>
+                <div class="slds-col slds-size_1-of-10">                       
+            		<a>Feedback</a> 
+            	</div>
+                <div class="slds-col slds-size_1-of-10">                       
+            		<a>About Us</a> 
+            	</div>
+                <div class="slds-col slds-size_1-of-10">                       
+            		<a>Language:</a>&nbsp;English 
+            	</div>
+                <div class="slds-col slds-size_2-of-4">                       
+            		
+            	</div>
+        	</div>
+            <br></br>
+            <br></br>
+        </div>
+    </body>
+    
+</aura:component>

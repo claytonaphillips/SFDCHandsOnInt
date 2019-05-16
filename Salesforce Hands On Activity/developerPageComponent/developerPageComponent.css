@@ -1,0 +1,227 @@
+.THIS {
+    margin: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.THIS .grid {
+    width: 100%; 
+  	height: 60px;
+    overflow: hidden;
+  	background-color: rgb(1, 52, 78);
+    position: relative;
+	top: 0px;
+	left: 0px;
+}
+
+.THIS .devLogo {
+    position: absolute;
+	top: 5px;
+	left: 30px;
+}
+
+.THIS .navigationLinkText{
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.THIS #navigationLink {
+  	padding-left: 15px;
+    padding-top: 18px;  
+}
+
+.THIS .productLinks {
+  	background-color: white;
+    border-color: white;
+    position: absolute;
+	top: -10px;
+	left: 235px;
+    width: 300px;
+}
+
+.THIS .trailheadLogo{
+	position: absolute;
+	top: 120px;
+	left: 80px;
+}
+
+.THIS .developerCharacters{
+	position: absolute;
+	top: -180px;
+	left: 5px;
+}
+
+.THIS .relative{
+	position: relative;
+	top: 0;
+	left: 0;
+    padding-right: 15px;
+}
+
+.THIS .opacity{
+	opacity: 0.5;
+}
+
+.THIS .verticalLink{
+	text-decoration: none;
+    color: white;
+}
+
+.THIS .searchBox{
+	position: absolute;
+	top: -5px;
+	left: 800px;
+}
+
+.THIS .loginButton{
+	background-color: rgb(1, 122, 180);
+    border-color: rgb(1, 122, 180);
+    border-width: thin;
+    color: white;
+    position: absolute;
+	top: 16px;
+	left: 1040px;
+    height: 30px;
+}
+
+.THIS .signUpButton{
+	background-color: rgb(97, 159, 44);
+    border-color: rgb(97, 159, 44);
+    border-width: thin;
+    color: white;
+    position: absolute;
+	top: 16px;
+	left: 1102px;
+    height: 30px;
+}
+
+.THIS .middleNavigationIcons{
+	position: absolute;
+	top: 35px;
+	left: 1000px;
+}
+
+.THIS .trailheaDXText{
+	position: absolute;
+	top: 60px;
+	left: 450px;
+    width: 410px;
+    color: white;
+    font-size: 20px;
+}
+
+.THIS .roundedBox {
+  border-radius: 5px;
+  background-color: rgb(15, 158,221); 
+  width: 180px;
+  height: 40px;  
+}
+
+.THIS .roundedBoxText {
+  padding-top: 10px; 
+  padding-bottom: 10px; 
+  padding-left: 15px;
+  text-align: center;
+}
+
+.THIS .padding {
+  padding-top: 2px; 
+  padding-bottom: 2px;   
+}
+
+.THIS .lionIcon {
+	position: absolute;
+	top: 40px;
+	left: 1006px;
+}
+
+.THIS .lightningBoltIcon {
+	position: absolute;
+	top: 84px;
+	left: 1006px;
+}
+
+.THIS .compassIcon {
+	position: absolute;
+	top: 129px;
+	left: 1006px;
+}
+
+.THIS .signsInverseIcon {
+	position: absolute;
+	top: 173px;
+	left: 1006px;
+}
+
+.THIS #middleSection {
+  	padding-left: 40px;
+    padding-right: 40px;
+}
+
+.THIS .blogPost {
+  	padding-top: 10px;  
+}
+
+.THIS #blueBlackground {
+  	background-color: rgb(203, 240, 255);  
+}
+
+.THIS .blueBar {
+    width: 100%; 
+  	height: 50px;
+  	background-color: rgb(1, 52, 78);
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.THIS .blueBarText {
+    padding-top: 15px;
+  	padding-bottom: 15px;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+}
+
+.THIS .blueBarButtonContainer {
+	position: absolute;
+    top: 12px;
+    left: 800px;	
+}
+
+.THIS .blueBarButton {
+	background-color: rgb(97, 159, 44);
+    border-radius: 5px;
+    border-color: rgb(97, 159, 44);
+    border-width: thin;
+}
+
+.THIS .firstLink {
+    padding-top: 10px;
+}
+
+.THIS .otherLink {
+    padding-top: 5px;
+}
+
+.THIS .bottomSection{
+	background-color: rgb(231, 231,231);
+}
+
+.THIS #legalSection {
+  	padding-left: 40px;
+    padding-right: 40px;
+    position: relative;
+	top: 0px;
+	left: 0px;
+}
+
+.THIS .socialMediaLogos {
+  	padding-left: 40px;
+    padding-right: 40px;
+    position: absolute;
+	top: -5px;
+	left: 900px;
+}
